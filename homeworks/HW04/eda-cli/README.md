@@ -247,6 +247,55 @@ curl -X POST "http://127.0.0.1:8000/quality-from-csv" \
 
 ---
 
+
+### 5. `POST /quality-flags-from-csv` — флаги качества данных по CSV
+
+Эндпоинт принимает CSV-файл, запускает EDA-ядро и возвращает **только булевы флаги качества данных**.
+
+Используется для быстрой диагностики проблем в датасете без расчёта интегрального quality score.
+
+Эндпоинт выполняет следующие шаги:
+
+- читает CSV-файл в `pandas.DataFrame`;
+- вызывает функции из `eda_cli.core`:
+  - `summarize_dataset`,
+  - `missing_table`,
+  - `compute_quality_flags`;
+- фильтрует результат, оставляя только булевы значения;
+- возвращает набор флагов качества данных.
+
+---
+
+### Запрос
+
+```http
+POST /quality-flags-from-csv
+Content-Type: multipart/form-data
+file: <CSV-файл>
+```
+
+Через Swagger:
+
+- в `/docs` открыть `POST /quality-flags-from-csv`,
+- нажать `Try it out`,
+- выбрать файл (например, `data/example.csv`),
+- нажать `Execute`.
+
+**Пример вызова через `curl` (Linux/macOS/WSL):**
+
+```bash
+curl -X POST "http://127.0.0.1:8000/quality-flag-from-csv" \
+  -F "file=@data/example.csv"
+```
+
+
+Ответ будет содержать:
+
+- `flags` - булевы флаги качества данных из compute_quality_flags.
+
+
+---
+
 ## Структура проекта (упрощённо)
 
 ```text
