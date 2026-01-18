@@ -1,0 +1,18 @@
+{
+  "best_model_name": "RandomForest",
+  "best_model_params": {
+    "max_depth": 20,
+    "max_features": "sqrt",
+    "min_samples_leaf": 1,
+    "n_estimators": 100
+  },
+  "test_metrics": {
+    "accuracy": 0.8866666666666667,
+    "f1_macro": 0.8582260152879829,
+    "roc_auc_ovr": 0.9522572950547653
+  },
+  "cv_score": 0.8353474573632921,
+  "task_type": "multiclass",
+  "dataset": "S06-hw-dataset-03.csv",
+  "timestamp": "2026-01-18T17:07:54.965985"
+}
