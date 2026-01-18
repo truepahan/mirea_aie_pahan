@@ -36,13 +36,13 @@
 
 - Таблица/список финальных метрик на test по всем моделям
 Модель	Accuracy	F1-score (macro)	ROC-AUC (OVR)
-DummyClassifier	0.3345	0.3338	0.5000
-LogisticRegression	0.4517	0.4483	0.8102
-DecisionTree	0.6483	0.6450	0.8349
-RandomForest	0.7586	0.7552	0.9408
-GradientBoosting	0.7414	0.7363	0.9271
+DummyClassifier	0.4083	0.3332	0.4999
+LogisticRegression	0.7237	0.6651	0.8481
+DecisionTree	0.7950	0.7366	0.8570
+RandomForest	0.8867	0.8582	0.9523
+GradientBoosting	0.8723	0.8421	0.9490
 
-- Победитель (по ROC-AUC или по согласованному критерию) RandomForestClassifier (максимальный F1-score 0.7552 и ROC-AUC 0.9408)
+- Победитель (по ROC-AUC или по согласованному критерию) RandomForestClassifier (максимальный F1-score 0.8582 и ROC-AUC 0.8867)
 Лучший баланс метрик, плюс ансамбль снижает variance
 
 ## 5. Analysis
